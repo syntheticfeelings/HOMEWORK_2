@@ -5,9 +5,9 @@ public class IntArrayList implements List {
     private int SIZE = 10;
 
     private int ELEMENT = 0;
-    private int DELETED=999999999;
+    private int DELETED = 999999999;
     private int[] array = new int[SIZE];
-    int DELETE_COUNT=0;
+    int DELETE_COUNT = 0;
 
 
     @Override
@@ -37,7 +37,7 @@ public class IntArrayList implements List {
     @Override
     public void clear() {
         resize(10);
-        ELEMENT=0;
+        ELEMENT = 0;
     }
 
     @Override
@@ -52,24 +52,26 @@ public class IntArrayList implements List {
             return false;
         }
     }
-    void sort(){
+
+    void sort() {
         for (int i = array.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                if(array[j] == DELETED){
+                if (array[j] == DELETED) {
                     int temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                 }
             }
         }
     }
+
     @Override
     public void remove(int index) {
-        array[index]=DELETED;
+        array[index] = DELETED;
         sort();
         DELETE_COUNT++;
 
-        if(ELEMENT<SIZE&&SIZE>=10)
+        if (ELEMENT < SIZE && SIZE >= 10)
             resize(SIZE);
         ELEMENT--;
     }
@@ -96,8 +98,8 @@ public class IntArrayList implements List {
 
     @Override
     public void print() {
-        for (int i = 0; i <array.length ; i++) {
-            System.out.print(array[i]+" ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
         }
         System.out.println();
     }
