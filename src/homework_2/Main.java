@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Main {
 
-    public static final int COUNT = 100000;
+    private static final int COUNT = 100000;
 
     public static void main(String[] args) {
 
@@ -18,9 +18,9 @@ public class Main {
         }
 
         long time = System.currentTimeMillis();
-        for (int i = 0; i < 100000000; i++) {
-            int value = list.get(100000/2);
-            //System.out.println("Value: " + value);
+        for (int i = 0; i < 100; i++) {
+            int value = list.get(100000 / 2);
+            System.out.println("Value: " + value);
         }
         long timeDiff = System.currentTimeMillis() - time;
         double seconds = timeDiff / 1000.0;
